@@ -7,10 +7,18 @@
  * };
  */
 
+#include <iostream>
+
+struct ListNode {
+  int val;
+  ListNode *next;
+  ListNode(int x) : val(x), next(NULL) {}
+};
+
 
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* node1, ListNode* node2) {
+    static ListNode* addTwoNumbers(ListNode* node1, ListNode* node2) {
         ListNode *root = 0,*last = 0;
         bool bCarry = false;
         while(node1 || node2 || bCarry){
@@ -65,8 +73,22 @@ ListNode *generate_node(int value)
 
 void print_node(ListNode *node)
 {
+    std::cout<<"[";
     while(node){
-        std::cout<<" "<<node->val;
+        std::cout<<node->val;
         node = node->next;
+        if(node){
+            std::cout<<",";
+        }
     }
+    std::cout<<"]"<<"\n";
+}
+
+
+int main()
+{
+    ListNode *node1 = generate_node(123);//[3,2,1]
+    ListNode *node2 = generate_node(876);//[6,7,8]
+    print_node(Solution::addTwoNumbers(node1,node2));
+    return 0;
 }

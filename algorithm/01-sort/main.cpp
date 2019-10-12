@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define LENGTH 10
+#define LENGTH 1000
 #define TESTCOUNT 10
 
 #define TEST_BUBBLE 0
@@ -18,20 +18,23 @@ std::string sortTypeName(SortType type)
 {
     switch(type)
     {
-        case SortType_eBubble:
-            return "bubble sort:";
+    case SortType_eBubble:
+        return "bubble sort:";
         
-        case SortType_eSelect:
-            return "select sort:";
+    case SortType_eSelect:
+        return "select sort:";
 
-        case SortType_eInsert:
-            return "insert sort:";
+    case SortType_eInsert:
+        return "insert sort:";
 
-        case SortType_eMerge:
-            return "merge sort:";
+    case SortType_eMerge:
+        return "merge sort:";
 
-        default:
-            return "";
+    case SortType_eQuick:
+        return "quick sort:";
+
+    default:
+        return "";
     }
 }
 
@@ -75,6 +78,6 @@ void test(SortType type)
 
 int main(int , char *[])
 {
-    test(SortType_eMerge);
+    test(SortType_eQuick);
     return 0;
 }

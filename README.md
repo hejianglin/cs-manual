@@ -1,2 +1,2 @@
-# leetcode
-leetcode exercise
+# 个人笔记
+学习中的小记录

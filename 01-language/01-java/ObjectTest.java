@@ -67,6 +67,11 @@ public class ObjectTest
 		//11.构造函数还可以使用初始化块,不过这个应该会令人比较难以理解
 
 		//12.finalize 函数会在对象回收时调用,不过不应该这么处理.
+		
+		//13.类中未声明变量的属性(public/private)则默认为同package下的public
+		//因此,最好指明类的变量属性,如果存在未指明也可以通过打包JAR 的方式
+		//进行包密封(package sealing)
+		
 
 	}
 	
@@ -125,7 +130,8 @@ public class ObjectTest
 
 class SubObjectTest
 {
-	//函数不能使用声明,但是类是包含
+	//函数不能使用声明,但是类是包含的，这些数据将在构造对象的时候被java
+	//自动初始化
 	private String m_sName;
 	private Date m_dateCreate;
 	private static int ID;
